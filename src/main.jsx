@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import ChefsPage from "./pages/Chefs";
 import RecipePage from "./pages/Chefs";
 import CategoryPage from "./pages/Chefs";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "chefs",
-        element: <ChefsPage />,
+        element: (
+          <PrivateRoute>
+            <ChefsPage />,
+          </PrivateRoute>
+        ),
       },
       {
         path: "chefs/:chefId",
