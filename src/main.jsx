@@ -5,11 +5,16 @@ import "./index.css";
 import AuthProvider from "./context/authProvider.jsx";
 import Root from "./layout/Root";
 import ErrorPage from "./pages/Error";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import ChefsPage from "./pages/Chefs";
 import RecipePage from "./pages/Chefs";
 import CategoryPage from "./pages/Chefs";
 import PrivateRoute from "./routes/PrivateRoute";
+import BlogPage from "./pages/Blog";
+import ContactPage from "./pages/Contact";
+import AboutPage from "./pages/About";
+import LoginPage from "./pages/Auth/Login";
+import SignUpPage from "./pages/Auth/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +49,26 @@ const router = createBrowserRouter([
       {
         path: "categories/:categoryId",
         element: <CategoryPage />,
+      },
+      {
+        path: "blog",
+        element: <BlogPage />,
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "signup",
+        element: <SignUpPage />,
       },
     ],
   },

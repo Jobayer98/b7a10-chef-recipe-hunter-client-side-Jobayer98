@@ -1,7 +1,7 @@
-import Chef from "./Home/Chef";
-import Recipe from "./Home/Recipe";
-import Banner from "./Home/Banner";
-import CatItem from "./Home/CatItem";
+import Chef from "./Chef";
+import Recipe from "./Recipe";
+import Banner from "./Banner";
+import CatItem from "./CatItem";
 
 const HomePage = () => {
   return (
