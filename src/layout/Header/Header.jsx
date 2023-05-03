@@ -1,12 +1,15 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     logout();
+    navigate("/");
   };
   return (
     <header className="sticky top-0 z-10">
@@ -20,6 +23,9 @@ const Header = () => {
           <ul className="flex gap-8">
             <li>
               <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/chefs">Chefs</NavLink>
             </li>
             <li>
               <NavLink to="/blog">Blog</NavLink>

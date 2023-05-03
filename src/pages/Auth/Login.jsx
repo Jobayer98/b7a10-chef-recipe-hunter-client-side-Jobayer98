@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
@@ -10,6 +10,8 @@ const LoginPage = () => {
   const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const LoginPage = () => {
 
     login(email, password)
       .then(() => {
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
