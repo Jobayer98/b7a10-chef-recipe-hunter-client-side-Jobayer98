@@ -2,8 +2,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import AuthProvider from "./context/authProvider.jsx";
 import Root from "./layout/Root";
 import ErrorPage from "./pages/Error";
