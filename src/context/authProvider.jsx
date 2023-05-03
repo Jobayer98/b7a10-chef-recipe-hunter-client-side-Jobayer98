@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 
@@ -25,7 +26,14 @@ const AuthProvider = ({ children }) => {
   };
   const signInWithGoogle = () => {};
   const signInWithGithub = () => {};
-  const logout = () => {};
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("Logout successfuly");
+        setUser(null);
+      })
+      .catch(() => {});
+  };
 
   useEffect(() => {
     const unsubsciber = onAuthStateChanged(auth, (currentUser) => {
