@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div className="flex-none">
           <div className="mr-2">
-            <button>Login</button>
+            <Link to="/login">Login</Link>
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

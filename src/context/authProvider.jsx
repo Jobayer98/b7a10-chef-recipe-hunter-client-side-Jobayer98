@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { getAuth } from "firebase/auth";
 
 import AuthContext from "./authContext";
@@ -13,8 +17,12 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
 
-  const register = (name, email, password) => {};
-  const login = (email, password) => {};
+  const register = (name, email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
   const signInWithGoogle = () => {};
   const signInWithGithub = () => {};
   const logout = () => {};

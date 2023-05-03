@@ -1,19 +1,51 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import { useContext, useState } from "react";
+
+import AuthContext from "../../context/authContext";
+
 const LoginPage = () => {
+  const [error, setError] = useState(false);
+  const { login } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    login(email, password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(true);
+      });
+  };
   return (
     <div className="hero min-h-[80vh] bg-base-200">
       <div className="hero-content w-[50%]">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
           <div className="card-body">
-            <form>
+            {error && (
+              <p className="text-xl font-semibold text-red-500">
+                {" "}
+                Failed Login. Invalid Email or Password
+              </p>
+            )}
+            <form onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="email"
                   className="input input-bordered"
@@ -25,6 +57,7 @@ const LoginPage = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   required
                   placeholder="password"
                   className="input input-bordered"
