@@ -21,7 +21,7 @@ const LoginPage = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 placeholder="password"
                 className="input input-bordered"
               />
@@ -32,7 +32,7 @@ const LoginPage = () => {
               </label>
             </div>
             <div className="form-control mt-6 mb-0">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary ">Login</button>
             </div>
             <div className="mt-2 text-blue-700 hover:underline">
               <Link to="/signup">Create a new account. </Link>
