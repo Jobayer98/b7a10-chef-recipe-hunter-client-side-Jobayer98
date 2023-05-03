@@ -3,7 +3,7 @@ import React from "react";
 const AuthContext = React.createContext({
   loading: true,
   user: "",
-  createUser: () => {},
+  register: () => {},
   login: () => {},
   signInWithGoogle: () => {},
   signInWithGithub: () => {},

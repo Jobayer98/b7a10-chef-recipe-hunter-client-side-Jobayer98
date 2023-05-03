@@ -1,13 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-10">
-      <div className="navbar bg-base-100 border-b-2">
+      <div className="navbar bg-base-100 border-b-2 px-24">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">Mexi Kitchen</a>
+          <Link to="/" className="text-xl font-bold">
+            Mexi Kitchen
+          </Link>
         </div>
-        <div className="mr-24">
+        <div className="mr-12">
           <ul className="flex gap-8">
             <li>
               <NavLink to="/">Home</NavLink>
@@ -24,6 +26,9 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex-none">
+          <div className="mr-2">
+            <button>Login</button>
+          </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
