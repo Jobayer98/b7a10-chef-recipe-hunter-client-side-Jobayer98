@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
+    <header className="sticky top-0 z-10">
       <div className="navbar bg-base-100 border-b-2">
         <div className="flex-1">
           <a className="btn btn-ghost normal-case text-xl">Mexi Kitchen</a>
