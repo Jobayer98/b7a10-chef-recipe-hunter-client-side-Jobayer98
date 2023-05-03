@@ -1,62 +1,47 @@
-import bannerImg from "../assets/banner.jpg";
+import Chef from "./Home/Chef";
+import Recipe from "./Home/Recipe";
+import Banner from "./Home/Banner";
+import CatItem from "./Home/CatItem";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 const HomePage = () => {
   return (
     <>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: `url(${bannerImg})`,
-        }}
-      >
-        <div className="hero-overlay bg-opacity-30"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-          </div>
-        </div>
-      </div>
+      <Banner />
 
-      <div className="my-16 pb-6">
-        <h2 className="text-center mb-6 text-4xl font-bold">Our Chefs</h2>
-        <div className="flex justify-center gap-12">
-          <div className="avatar">
-            <div className="w-40 rounded-full">
-              <img src={bannerImg} />
-            </div>
-          </div>
-          <div className="avatar">
-            <div className="w-40 rounded-full">
-              <img src={bannerImg} />
-            </div>
-          </div>
-          <div className="avatar">
-            <div className="w-40 rounded-full">
-              <img src={bannerImg} />
-            </div>
-          </div>
-          <div className="avatar">
-            <div className="w-40 rounded-full">
-              <img src={bannerImg} />
-            </div>
-          </div>
-          <div className="avatar">
-            <div className="w-40 rounded-full">
-              <img src={bannerImg} />
-            </div>
-          </div>
+      <section className="my-24 px-24">
+        <h1 className="text-4xl font-bold text-center">Our Chefs</h1>
+        <div className="flex justify-center gap-8 mt-8">
+          <Chef />
+          <Chef />
+          <Chef />
+          <Chef />
         </div>
-      </div>
+      </section>
+
+      <section className="my-24 px-24">
+        <h1 className="text-5xl font-bold text-center">Latest Recipes</h1>
+        <div className="grid grid-cols-3 gap-x-6 gap-y-12 mt-8">
+          <Recipe />
+          <Recipe />
+          <Recipe />
+          <Recipe />
+          <Recipe />
+          <Recipe />
+        </div>
+      </section>
+
+      <section className="my-24">
+        <h2 className="text-center mb-6 text-4xl font-bold">
+          Receipe Categories
+        </h2>
+        <div className="flex justify-center gap-12">
+          <CatItem />
+          <CatItem />
+          <CatItem />
+          <CatItem />
+          <CatItem />
+        </div>
+      </section>
     </>
   );
 };
