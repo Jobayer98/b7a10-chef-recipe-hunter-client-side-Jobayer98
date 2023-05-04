@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+
 import AuthContext from "../../context/authContext";
+import "./Header.css";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
@@ -22,19 +24,44 @@ const Header = () => {
         <div className="mr-12">
           <ul className="flex gap-8">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/chefs">Chefs</NavLink>
+              <NavLink
+                to="/chefs"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Chefs
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/blog">Blog</NavLink>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Blog
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
