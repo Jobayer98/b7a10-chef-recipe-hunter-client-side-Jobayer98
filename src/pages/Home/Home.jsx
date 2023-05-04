@@ -1,5 +1,5 @@
 import Chef from "./Chef";
-import Recipe from "./Recipe";
+import Recipe from "../../components/Recipe/Recipe";
 import Banner from "./Banner";
 import CatItem from "./CatItem";
 
@@ -18,18 +18,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="my-24 px-24">
-        <h1 className="text-5xl font-bold text-center">Latest Recipes</h1>
-        <div className="grid grid-cols-3 gap-x-6 gap-y-12 mt-8">
-          <Recipe />
-          <Recipe />
-          <Recipe />
-          <Recipe />
-          <Recipe />
-          <Recipe />
-        </div>
-      </section>
-
       <section className="my-24">
         <h2 className="text-center mb-6 text-4xl font-bold">
           Receipe Categories
@@ -40,6 +28,18 @@ const HomePage = () => {
           <CatItem />
           <CatItem />
           <CatItem />
+        </div>
+      </section>
+
+      <section className="my-24 px-24">
+        <h1 className="text-5xl font-bold text-center">Latest Recipes</h1>
+        <div className="grid grid-cols-3 gap-x-6 gap-y-12 mt-8">
+          <Recipe />
+          <Recipe />
+          <Recipe />
+          <Recipe />
+          <Recipe />
+          <Recipe />
         </div>
       </section>
     </>

@@ -6,9 +6,9 @@ import AuthProvider from "./context/authProvider.jsx";
 import Root from "./layout/Root";
 import ErrorPage from "./pages/Error";
 import Home from "./pages/Home/Home";
-import ChefsPage from "./pages/Chefs";
-import RecipePage from "./pages/Chefs";
-import CategoryPage from "./pages/Chefs";
+import ChefsPage, { loader as chefsLoader } from "./pages/Chefs";
+import RecipePage, { loader as recipeLoader } from "./pages/Recipes";
+import CategoryPage from "./pages/Category";
 import PrivateRoute from "./routes/PrivateRoute";
 import BlogPage from "./pages/Blog";
 import ContactPage from "./pages/Contact";
@@ -30,17 +30,23 @@ const router = createBrowserRouter([
         path: "chefs",
         element: (
           <PrivateRoute>
+            <ChefsPage />
+          </PrivateRoute>
+        ),
+        loader: chefsLoader,
+      },
+      {
+        path: "chefs/:chefId",
+        element: (
+          <PrivateRoute>
             <ChefsPage />,
           </PrivateRoute>
         ),
       },
       {
-        path: "chefs/:chefId",
-        element: <ChefsPage />,
-      },
-      {
         path: "recipes",
         element: <RecipePage />,
+        loader: recipeLoader,
       },
       {
         path: "recipes/:recipeId",
