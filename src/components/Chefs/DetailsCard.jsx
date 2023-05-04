@@ -28,7 +28,7 @@ const DetailsCard = ({ recipe }) => {
       <div className="mt-6 mx-4 px-2 flex-1">
         <div>
           <h2 className="text-xl font-semibold">{recipe.title}</h2>
-          <p className="mt-2 flex justify-between">
+          <div className="mt-2 flex justify-between">
             <Rating
               className="text-yellow-400"
               placeholderRating={4.5}
@@ -52,7 +52,7 @@ const DetailsCard = ({ recipe }) => {
               )}
             </span>
             <Toaster />
-          </p>
+          </div>
           <div className="mt-4">
             <p>
               <span className="font-semibold">Difficulty: </span>{" "}

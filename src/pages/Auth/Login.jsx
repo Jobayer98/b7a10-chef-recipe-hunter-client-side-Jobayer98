@@ -12,7 +12,6 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
   const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
@@ -23,8 +22,7 @@ const LoginPage = () => {
     const password = form.password.value;
 
     login(email, password)
-      .then((result) => {
-        console.log(result);
+      .then(() => {
         navigate(from, { replace: true });
       })
       .catch((error) => {

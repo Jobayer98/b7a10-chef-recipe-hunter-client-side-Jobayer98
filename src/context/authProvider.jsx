@@ -9,12 +9,12 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 
 import AuthContext from "./authContext";
 import app from "../firebase/firebase.config";
-import { redirect } from "react-router-dom";
 
 const auth = getAuth(app);
 
@@ -23,32 +23,30 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const register = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const loginInWithGoogle = () => {
+    setLoading(true);
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
-      .then((r) => {
-        console.log(r);
-      })
+      .then(() => {})
       .catch(() => {});
   };
 
   const loginInWithGithub = () => {
+    setLoading(true);
+
     const provider = new GithubAuthProvider();
     signInWithPopup(auth, provider)
-      .then((r) => {
-        console.log(r);
-      })
-      .catch((e) => {
-        console.log(e.code);
-        console.log(e.message);
-      });
+      .then(() => {})
+      .catch(() => {});
   };
 
   const logout = () => {
@@ -58,8 +56,6 @@ const AuthProvider = ({ children }) => {
       })
       .catch(() => {});
   };
-
-  const profileUpdate = (user) => {};
 
   useEffect(() => {
     const unsubsciber = onAuthStateChanged(auth, (currentUser) => {

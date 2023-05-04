@@ -19,7 +19,7 @@ const SignUpPage = () => {
     const email = form.email.value;
     const password = form.password.value;
     const conPass = form.conpassword.value;
-    // const photo = e.target.file.value;
+    const photo = form.photo.value;
 
     const isEqual = password === conPass;
 
@@ -29,16 +29,15 @@ const SignUpPage = () => {
       return;
     }
 
-    register(name, email, password)
+    register(email, password)
       .then((result) => {
-        console.log(result);
         result.user.displayName = name;
-        // result.user.photoURL = photo;
+        result.user.photoURL = photo;
         navigate(from, { replace: true });
       })
       .catch((e) => {
         setError(true);
-        console.log(e);
+        setMsg(e.message);
       });
   };
   return (
@@ -98,11 +97,18 @@ const SignUpPage = () => {
                   className="input input-bordered"
                 />
               </div>
-              {/* <input
-                name="file"
-                type="file"
-                className="file-input w-full max-w-xs mt-3"
-              /> */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  name="photo"
+                  type="url"
+                  required
+                  placeholder="https://example.com"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control mt-6 mb-0">
                 <button className="btn btn-primary">Sign Up</button>
               </div>
