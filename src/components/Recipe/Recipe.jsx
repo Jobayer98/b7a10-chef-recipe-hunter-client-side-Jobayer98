@@ -1,26 +1,30 @@
-const Recipe = () => {
+/* eslint-disable react/prop-types */
+const Recipe = ({ recipe }) => {
   return (
     <div className="w-80  border-[1px] flex flex-col items-center rounded-lg">
       <div className="w-full">
         <img
-          className="h-64 w-full"
-          src="https://chefin.com.au/wp-content/uploads/2021/02/chef-hemant-dadlani-profile-1-833x1024.jpg"
+          className="h-64 w-full rounded-t-lg"
+          src={recipe?.image}
           alt="chef"
         />
       </div>
 
-      <div>
+      <div className="mt-6 ml-4">
         <div>
-          <h2>Name</h2>
-          <p>Rating</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-            aspernatur.
-          </p>
+          <h2 className="text-xl font-semibold">{recipe?.title}</h2>
+          <p className="mt-1">Rating</p>
+          <p className="mt-4">{recipe?.description.slice(0, 100) + " ....."}</p>
         </div>
-        <div>
-          <img src="" alt="chef" />
-          <p>name</p>
+        <div className="flex items-center gap-2 mt-6">
+          <img
+            className="w-8 h-8 rounded-full"
+            src="https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?cs=srgb&dl=pexels-miquel-ferran-gomez-figueroa-3814446.jpg&fm=jpg"
+            alt="chef"
+          />
+          <p>
+            <span className="text-gray-400">By</span> John Doe
+          </p>
         </div>
       </div>
 

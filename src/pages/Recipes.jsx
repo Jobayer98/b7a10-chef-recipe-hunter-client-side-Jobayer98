@@ -6,7 +6,7 @@ import Recipe from "../components/Recipe/Recipe";
 const RecipePage = () => {
   const data = useLoaderData();
   return (
-    <div className="grid grid-cols-3 gap-x-6 gap-y-12 px-4 my-12">
+    <div className="grid grid-cols-3 gap-x-4 gap-y-8 px-12 my-12 justify-center">
       {data.map((item) => (
         <Recipe key={item.id} recipe={item} />
       ))}

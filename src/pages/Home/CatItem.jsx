@@ -1,11 +1,11 @@
-import bannerImg from "../../assets/banner.jpg";
-
-const CatItem = () => {
+/* eslint-disable react/prop-types */
+const CatItem = ({ img, label }) => {
   return (
-    <div className="avatar">
-      <div className="w-40 rounded-full">
-        <img src={bannerImg} />
+    <div className="avatar flex-col items-center cursor-pointer">
+      <div className="w-48 rounded-full">
+        <img src={img} />
       </div>
+      <h2 className="text-xl font-semibold mt-4">{label}</h2>
     </div>
   );
 };

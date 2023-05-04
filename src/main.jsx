@@ -28,13 +28,10 @@ const router = createBrowserRouter([
       },
       {
         path: "chefs",
-        element: (
-          <PrivateRoute>
-            <ChefsPage />
-          </PrivateRoute>
-        ),
+        element: <ChefsPage />,
         loader: chefsLoader,
       },
+
       {
         path: "chefs/:chefId",
         element: (
