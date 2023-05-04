@@ -43,7 +43,7 @@ const ChefDetails = () => {
       </div>
 
       {/* chef recipes */}
-      <div className="grid grid-cols-2 gap-12 justify-items-center mx-12">
+      <div className="grid grid-cols-2 gap-16 justify-items-center mx-16">
         {data.recipes.map((recipe) => (
           <DetailsCard key={recipe.id} recipe={recipe} />
         ))}
