@@ -70,11 +70,11 @@ const DetailsCard = ({ recipe }) => {
           <div>
             <p className="font-semibold mt-4">Ingredients list:</p>
             <ul className="list-disc ml-8">
-              <li>{recipe.ingredients[0]}</li>
-              <li>{recipe.ingredients[1]}</li>
-              <li>{recipe.ingredients[2]}</li>
-              <li>{recipe.ingredients[3]}</li>
-              <li>{recipe.ingredients[4]}</li>
+              <li>{recipe?.ingredients[0]}</li>
+              <li>{recipe?.ingredients[1]}</li>
+              <li>{recipe?.ingredients[2]}</li>
+              <li>{recipe?.ingredients[3]}</li>
+              <li>{recipe?.ingredients[4]}</li>
             </ul>
           </div>
           <div className="mb-12 mt-4">

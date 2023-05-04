@@ -55,7 +55,6 @@ const ChefDetails = () => {
 export default ChefDetails;
 
 export const loader = async ({ params }) => {
-  console.log(params);
   const id = params.chefId;
   const chefData = await axios.get(
     `https://b7a10-chef-recipe-hunter-server-side-jobayer98-5wh18qroh.vercel.app/chefs/${id}`

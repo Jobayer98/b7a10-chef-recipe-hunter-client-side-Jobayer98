@@ -11,7 +11,7 @@ const Header = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate("/login");
   };
   return (
     <header className="sticky top-0 z-10">
@@ -70,10 +70,10 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded w-32"
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded w-36"
               >
                 <li>
-                  <a className="justify-between">Profile</a>
+                  <a className="justify-between">Update Profile</a>
                 </li>
                 <li>
                   <a>Settings</a>

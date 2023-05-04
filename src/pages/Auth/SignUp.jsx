@@ -19,7 +19,7 @@ const SignUpPage = () => {
     const email = form.email.value;
     const password = form.password.value;
     const conPass = form.conpassword.value;
-    const photo = e.target.file.value;
+    // const photo = e.target.file.value;
 
     const isEqual = password === conPass;
 
@@ -33,12 +33,12 @@ const SignUpPage = () => {
       .then((result) => {
         console.log(result);
         result.user.displayName = name;
-        result.user.photoURL = photo
+        // result.user.photoURL = photo;
         navigate(from, { replace: true });
       })
-      .catch(() => {
+      .catch((e) => {
         setError(true);
-        setMsg("Password is less than 6 character");
+        console.log(e);
       });
   };
   return (
@@ -98,11 +98,11 @@ const SignUpPage = () => {
                   className="input input-bordered"
                 />
               </div>
-              <input
+              {/* <input
                 name="file"
                 type="file"
                 className="file-input w-full max-w-xs mt-3"
-              />
+              /> */}
               <div className="form-control mt-6 mb-0">
                 <button className="btn btn-primary">Sign Up</button>
               </div>
