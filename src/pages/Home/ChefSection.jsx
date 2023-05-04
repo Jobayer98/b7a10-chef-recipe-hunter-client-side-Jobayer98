@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 
 const ChefSection = () => {
   const { data } = useFetch(
-    "https://b7a10-chef-recipe-hunter-server-side-jobayer98.vercel.app/chefs"
+    "https://b7a10-chef-recipe-hunter-server-side-jobayer98-5wh18qroh.vercel.app/chefs"
   );
   return (
     <section className="my-24 px-24">

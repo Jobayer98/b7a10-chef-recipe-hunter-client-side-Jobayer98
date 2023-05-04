@@ -3,7 +3,7 @@ import img1 from "../../assets/food/img1.jpg";
 import img2 from "../../assets/food/img2.jpg";
 import img3 from "../../assets/food/img3.jpg";
 import img4 from "../../assets/food/img4.jpg";
-import img6 from "../../assets/food/img5.jpg";
+import img6 from "../../assets/food/img6.jpg";
 import CatItem from "./CatItem";
 
 const CatSection = () => {

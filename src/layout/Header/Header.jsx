@@ -5,7 +5,7 @@ import AuthContext from "../../context/authContext";
 import "./Header.css";
 
 const Header = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout, loading } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -58,12 +58,14 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex-none tooltip" data-tip={user?.displayName}>
-          <div className="mr-2">{!user && <Link to="/login">Login</Link>}</div>
+          <div className="mr-2">
+            {!loading && !user && <Link to="/login">Login</Link>}
+          </div>
           {user && (
             <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full ">
-                  <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
+                  <img src={user.photoURL} />
                 </div>
               </label>
               <ul

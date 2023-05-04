@@ -1,15 +1,29 @@
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-gray-900 text-gray-100">
-      <div>
+    <footer className="footer p-10 bg-gray-900 text-gray-100 grid grid-cols-5 gap-6">
+      <div className="col-span-3 w-[80%] text-slate-300">
         <span className="footer-title">Services</span>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
+        <p>
+          Our service is an online platform that provides users with access to a
+          large database of recipes for various types of cuisines, ingredients,
+          and dietary preferences. Typically, these websites allow users to
+          search for specific recipes using keywords or filters, and often
+          provide additional features such as meal planning tools, grocery list
+          creation, and cooking tips.
+        </p>
       </div>
       <div>
         <span className="footer-title">Company</span>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
+        <Link to="/" className="link link-hover">
+          Home
+        </Link>
+        <Link to="/about" className="link link-hover">
+          About us
+        </Link>
+        <Link to="/contact" className="link link-hover">
+          Contact
+        </Link>
       </div>
       <div>
         <span className="footer-title">Social</span>
