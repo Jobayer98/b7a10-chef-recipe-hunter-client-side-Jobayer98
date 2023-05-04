@@ -7,7 +7,8 @@ import AuthContext from "../../context/authContext";
 
 const LoginPage = () => {
   const [error, setError] = useState(false);
-  const { login } = useContext(AuthContext);
+  const { login, loginInWithGoogle, loginInWithGithub } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,6 +30,16 @@ const LoginPage = () => {
         console.log(error);
         setError(true);
       });
+  };
+
+  const handleGoogle = () => {
+    loginInWithGoogle();
+    navigate(from, { replace: true });
+  };
+
+  const handleGithub = () => {
+    loginInWithGithub();
+    navigate(from, { replace: true });
   };
   return (
     <div className="hero min-h-[80vh] bg-base-200">
@@ -76,10 +87,13 @@ const LoginPage = () => {
               </div>
             </form>
             <div className="form-control ">
-              <button className="btn bg-gray-50 hover:bg-gray-50 mb-2 text-gray-800">
+              <button
+                onClick={handleGoogle}
+                className="btn bg-gray-50 hover:bg-gray-50 mb-2 text-gray-800"
+              >
                 <FcGoogle className="mr-2 text-2xl" /> Login With Google
               </button>
-              <button className="btn">
+              <button onClick={handleGithub} className="btn">
                 {" "}
                 <BsGithub className="mr-2 text-2xl" /> Login With Github
               </button>

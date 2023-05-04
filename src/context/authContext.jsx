@@ -5,8 +5,8 @@ const AuthContext = React.createContext({
   user: "",
   register: () => {},
   login: () => {},
-  signInWithGoogle: () => {},
-  signInWithGithub: () => {},
+  loginInWithGoogle: () => {},
+  loginInWithGithub: () => {},
   logout: () => {},
 });
 
