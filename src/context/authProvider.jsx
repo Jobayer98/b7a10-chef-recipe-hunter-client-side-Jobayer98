@@ -34,6 +34,10 @@ const AuthProvider = ({ children }) => {
       .catch(() => {});
   };
 
+  const profileUpdate = (user) => {
+    
+  }
+
   useEffect(() => {
     const unsubsciber = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);

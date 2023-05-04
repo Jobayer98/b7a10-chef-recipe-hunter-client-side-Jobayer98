@@ -21,7 +21,8 @@ const LoginPage = () => {
     const password = form.password.value;
 
     login(email, password)
-      .then(() => {
+      .then((result) => {
+        console.log(result);
         navigate(from, { replace: true });
       })
       .catch((error) => {

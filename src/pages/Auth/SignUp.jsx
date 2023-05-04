@@ -1,13 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 
 const SignUpPage = () => {
   const [error, setError] = useState(false);
   const [msg, setMsg] = useState("");
   const { register } = useContext(AuthContext);
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +19,7 @@ const SignUpPage = () => {
     const email = form.email.value;
     const password = form.password.value;
     const conPass = form.conpassword.value;
-    // const photo = e.target.file.value;
+    const photo = e.target.file.value;
 
     const isEqual = password === conPass;
 
@@ -27,8 +30,11 @@ const SignUpPage = () => {
     }
 
     register(name, email, password)
-      .then(() => {
-        navigate("/");
+      .then((result) => {
+        console.log(result);
+        result.user.displayName = name;
+        result.user.photoURL = photo
+        navigate(from, { replace: true });
       })
       .catch(() => {
         setError(true);

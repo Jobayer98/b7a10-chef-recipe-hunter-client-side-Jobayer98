@@ -13,7 +13,7 @@ const Header = () => {
   };
   return (
     <header className="sticky top-0 z-10">
-      <div className="navbar bg-base-100 border-b-2 px-24">
+      <div className="navbar bg-base-100 border-b-2 px-24 py-6">
         <div className="flex-1">
           <Link to="/" className="text-xl font-bold">
             Mexi Kitchen
@@ -38,12 +38,12 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="flex-none">
+        <div className="flex-none tooltip" data-tip={user?.displayName}>
           <div className="mr-2">{!user && <Link to="/login">Login</Link>}</div>
           {user && (
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
+                <div className="w-10 rounded-full ">
                   <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />
                 </div>
               </label>
