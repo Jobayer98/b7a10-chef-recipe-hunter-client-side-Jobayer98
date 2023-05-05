@@ -8,7 +8,7 @@ import CatItem from "./CatItem";
 
 const CatSection = () => {
   return (
-    <section className="hidden md:block lg:block my-24 md:px-8 lg:px-24">
+    <section className="hidden md:block lg:block my-24 md:px-8 lg:px-24 gap-12">
       <h1 className="text-5xl font-bold text-center ">Category</h1>
       <div className=" flex justify-center gap-8 mt-8">
         <CatItem img={img1} label="Pizza" />
