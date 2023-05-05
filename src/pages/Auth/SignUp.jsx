@@ -42,8 +42,11 @@ const SignUpPage = () => {
   };
   return (
     <div className="hero min-h-[80vh] bg-base-200">
-      <div className="hero-content w-[50%]">
+      <div className="hero-content w-full md:w-[80%] lg:w-[50%]">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
+          <h1 className="mt-8 text-center text-2xl font-semibold">
+            Please Registration
+          </h1>
           <div className="card-body">
             {error && (
               <p className="text-xl font-semibold text-red-500"> {msg}</p>

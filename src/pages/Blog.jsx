@@ -1,6 +1,7 @@
 const BlogPage = () => {
   return (
     <div className="mt-8 lg:m-12 flex flex-col items-center">
+      <h1 className="mb-8 text-center text-2xl font-semibold">Blog Page</h1>
       <div className="p-2 lg:p-12 border-2 mb-8 w-[80%]">
         <h2 className="text-2xl font-semibold mb-4">
           Differences between uncontrolled and controlled components.
