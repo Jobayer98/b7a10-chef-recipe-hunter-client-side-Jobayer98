@@ -1,13 +1,17 @@
-### This is an Mexican food making website. This is website will help you to make food recipe.
+### This is a Mexican food making website. This is website will help you to make food recipe.
 
-### Live [Link](https://chef-recipe-hunter-6281e.web.app/)
+#### Live link
 
-#### Screen Short
+[https://chef-recipe-hunter-6281e.web.app/](https://chef-recipe-hunter-6281e.web.app/)
 
-(./src/assets/screenShort/img3.png)
-(./src/assets/screenShort/img2.png)
-(./src/assets/screenShort/img1.png)
+<p>Feature of this website</p>
 
-#### Setup
+- Chefs category
+- Category of Recipe
+- Latest Recipe
+- You can like of our chef's
+- You can add to favourite any recipe
+
+##### Setup
 
 - run `npm i and npm run dev`
