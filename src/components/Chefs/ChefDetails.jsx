@@ -10,8 +10,8 @@ const ChefDetails = () => {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-12 p-6 mx-12 my-12 border-2 shadow">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-4 md:gap-8 lg:grid-cols-4 lg:gap-12 p-6 lg:mx-12 mx-4 my-12 border-2 shadow">
+        <div className="col-span-2 mb-4">
           <img className="h-72 w-full" src={data.photo} alt={data.name} />
         </div>
         <div className="col-span-2 text-slate-600 flex flex-col gap-2">
@@ -43,7 +43,7 @@ const ChefDetails = () => {
       </div>
 
       {/* chef recipes */}
-      <div className="grid grid-cols-2 gap-16 justify-items-center mx-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:mx-16 mx-4 justify-items-center  mt-4">
         {data.recipes.map((recipe) => (
           <DetailsCard key={recipe.id} recipe={recipe} />
         ))}

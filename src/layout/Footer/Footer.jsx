@@ -7,10 +7,7 @@ const Footer = () => {
         <p>
           Our service is an online platform that provides users with access to a
           large database of recipes for various types of cuisines, ingredients,
-          and dietary preferences. Typically, these websites allow users to
-          search for specific recipes using keywords or filters, and often
-          provide additional features such as meal planning tools, grocery list
-          creation, and cooking tips.
+          and dietary preferences.
         </p>
       </div>
       <div>

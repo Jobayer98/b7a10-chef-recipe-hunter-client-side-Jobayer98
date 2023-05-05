@@ -1,13 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { updateProfile } from "firebase/auth";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import AuthContext from "../../context/authContext";
 import "./Header.css";
 import { Toaster, toast } from "react-hot-toast";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
   const { user, logout, loading } = useContext(AuthContext);
+  const [isClick, setIsClick] = useState(false);
   const nameRef = useRef();
   const imgRef = useRef();
 
@@ -16,6 +19,7 @@ const Header = () => {
   const handleUpdateUser = () => {
     const name = nameRef.current.value;
     const img = imgRef.current.value;
+
     updateProfile(user, {
       displayName: name,
       photoURL: img,
@@ -28,19 +32,31 @@ const Header = () => {
     toast.success("Update profile");
   };
 
+  const handleClick = (e) => {
+    e.stopPropagation();
+
+    console.log(isClick);
+  };
+
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
   return (
     <header className="sticky top-0 z-10">
-      <div className="navbar bg-base-100 border-b-2 px-24 py-6">
-        <div className="flex-1">
+      <div className="navbar bg-base-100 border-b-2 md:px-10 lg:px-16 py-6">
+        <div
+          onClick={handleClick}
+          className="block ml-4 bg-red-200 rounded-full"
+        >
+          <Hamburger />
+        </div>
+        <div className="flex-1 hidden md:block lg:block">
           <Link to="/" className="text-xl font-bold">
             Mex Kitchen
           </Link>
         </div>
-        <div className="mr-12">
+        <div className="mr-12 hidden md:block lg:block">
           <ul className="flex gap-8">
             <li>
               <NavLink
@@ -77,7 +93,10 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className="flex-none tooltip" data-tip={user?.displayName}>
+        <div
+          className="flex-none tooltip hidden md:block lg:block"
+          data-tip={user?.displayName}
+        >
           <div className="mr-2">
             {!loading && !user && <Link to="/login">Login</Link>}
           </div>

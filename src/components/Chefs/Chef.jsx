@@ -11,7 +11,7 @@ const Chef = ({ chef }) => {
     setIsLike(!isLike);
   };
   return (
-    <div className="w-72 h-[350px]  border-[1px] flex flex-col items-center rounded-lg">
+    <div className="w-full md:w-56 lg:w-72 h-[350px]  border-[1px] flex flex-col items-center rounded-lg">
       <div className="avatar py-4">
         <div className="w-40 rounded-full">
           <img src={chef.photo} alt="chef" />
