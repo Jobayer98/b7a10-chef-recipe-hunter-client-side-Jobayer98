@@ -6,11 +6,10 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext";
 import "./Header.css";
 import { Toaster, toast } from "react-hot-toast";
-import Hamburger from "./Hamburger";
+import Menu from "./Menu";
 
 const Header = () => {
   const { user, logout, loading } = useContext(AuthContext);
-  const [isClick, setIsClick] = useState(false);
   const nameRef = useRef();
   const imgRef = useRef();
 
@@ -32,28 +31,16 @@ const Header = () => {
     toast.success("Update profile");
   };
 
-  const handleClick = (e) => {
-    e.stopPropagation();
-
-    console.log(isClick);
-  };
-
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
   return (
-    <header className="sticky top-0 z-10">
+    <header className="sticky top-0 z-10 hidden md:block lg:block">
       <div className="navbar bg-base-100 border-b-2 md:px-10 lg:px-16 py-6">
-        <div
-          onClick={handleClick}
-          className="block ml-4 bg-red-200 rounded-full"
-        >
-          <Hamburger />
-        </div>
-        <div className="flex-1 hidden md:block lg:block">
+        <div className="flex-1">
           <Link to="/" className="text-xl font-bold">
-            Mex Kitchen
+            Mexican Kitchen
           </Link>
         </div>
         <div className="mr-12 hidden md:block lg:block">
@@ -93,10 +80,7 @@ const Header = () => {
           </ul>
         </div>
 
-        <div
-          className="flex-none tooltip hidden md:block lg:block"
-          data-tip={user?.displayName}
-        >
+        <div className="flex-none tooltip" data-tip={user?.displayName}>
           <div className="mr-2">
             {!loading && !user && <Link to="/login">Login</Link>}
           </div>
@@ -126,7 +110,7 @@ const Header = () => {
               </ul>
               {/* Put this part before </body> tag */}
               <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-              <div className="modal modal-bottom sm:modal-middle">
+              <div className="modal modal-middle sm:modal-middle">
                 <div className="modal-box">
                   <label>
                     Name
@@ -139,7 +123,7 @@ const Header = () => {
                   </label>
                   <br />
                   <label>
-                    Photo url
+                    Photo Url
                     <input
                       ref={imgRef}
                       className="input input-bordered input-primary ml-2"
@@ -166,6 +150,7 @@ const Header = () => {
         </div>
       </div>
       <Toaster />
+      <Menu />
     </header>
   );
 };
